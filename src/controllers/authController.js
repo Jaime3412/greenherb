@@ -13,7 +13,6 @@ const register = async (req, res) => {
     return res.status(201).json({ success: true, data: result });
 
   } catch (error) {
-    console.error('ERRO NO REGISTER:', error.message);
     if (error.message === 'Email já está em uso') {
       return res.status(409).json({ success: false, error: error.message });
     }

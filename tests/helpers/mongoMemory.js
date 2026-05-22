@@ -1,17 +1,14 @@
-const { MongoMemoryServer } = require('mongodb-memory-server');
 const mongoose = require('mongoose');
 
-let mongod;
+const TEST_URI = 'mongodb://127.0.0.1:27017/greenherb_test';
 
 const connect = async () => {
-  mongod = await MongoMemoryServer.create();
-  await mongoose.connect(mongod.getUri());
+  await mongoose.connect(TEST_URI);
 };
 
 const disconnect = async () => {
   await mongoose.connection.dropDatabase();
   await mongoose.connection.close();
-  await mongod.stop();
 };
 
 const clearDatabase = async () => {

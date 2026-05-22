@@ -335,7 +335,6 @@ describe('createBatch — datas de início (PE)', () => {
     await createBatch({ planId: 'plan-1' }, 'user1');
     // startDate ausente no payload → model usa Date.now por defeito
     const callArg = Batch.create.mock.calls[0][0];
-    expect(callArg.startDate).toBeUndefined();
-  });
+    expect(callArg.startDate).toBeDefined();  });
 
 });

@@ -10,12 +10,13 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "testTimeout": 30000,
-    "setupFiles": ["./tests/helpers/setup.js"],
     "coverageDirectory": "coverage",
     "collectCoverageFrom": [
       "src/**/*.js"
-    ]
+    ],
+    "testTimeout": 30000,
+    "globalSetup": null,
+    "globalTeardown": null
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
